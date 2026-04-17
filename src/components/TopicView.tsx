@@ -1,6 +1,6 @@
-import { Suspense } from 'react'
-import { useParams, Link } from 'react-router-dom'
 import { Canvas } from '@react-three/fiber'
+import { Suspense } from 'react'
+import { Link, useParams } from 'react-router-dom'
 import { TOPICS } from '../topics'
 
 function LoadingFallback() {

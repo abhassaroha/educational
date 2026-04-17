@@ -1,6 +1,6 @@
-import { useRef, useMemo, useState } from 'react'
+import { Line, OrbitControls, Text } from '@react-three/drei'
 import { useFrame } from '@react-three/fiber'
-import { OrbitControls, Text, Line } from '@react-three/drei'
+import { useRef, useState } from 'react'
 import * as THREE from 'three'
 
 const WAVE_POINTS = 200
@@ -54,12 +54,6 @@ function WaveLine({ yOffset, harmonicIndex, color, label, clock, showSum }: Wave
     }
     setPoints([...pts]);
   })
-
-  const initialPositions = useMemo(() => {
-    return Float32Array.from(
-      buildPoints(WAVE_POINTS).flatMap((p) => [p.x, p.y + yOffset, 0])
-    )
-  }, [yOffset])
 
   return (
     <group>
